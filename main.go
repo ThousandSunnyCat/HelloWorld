@@ -6,11 +6,18 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello World");
+	for bb:=0;bb<9;bb++ {
+		test(bb)
+		fmt.Println("______________________________")
+	}
+	// test(2)
+}
 
-	arr := [] int {0,0,1,1,1,2,2,3,3,4}
-	i := leetcode.RemoveDuplicates(arr)
+func test(k int) {
+	arr := []int{1,2,3,4}
+	leetcode.RotateArray(arr,k)
 
-	fmt.Println(i)
-	fmt.Println(arr)
+	for _, v := range arr {
+		fmt.Println(v)
+	}
 }

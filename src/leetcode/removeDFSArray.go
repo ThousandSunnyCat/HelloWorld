@@ -6,14 +6,14 @@ func RemoveDuplicates(nums []int) int {
 		return 1
 	}
 	// 设置
-	Prev := 0
+	p := 0
 
 	for i:=1;i<len(nums);i++ {
-		if nums[Prev] != nums[i] {
-			Prev++
-			nums[Prev] = nums[i]
+		if nums[p] != nums[i] {
+			p++
+			nums[p] = nums[i]
 		}
 	}
 
-	return Prev + 1
+	return p + 1
 }
