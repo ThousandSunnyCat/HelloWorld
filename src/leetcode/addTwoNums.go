@@ -1,10 +1,5 @@
 package leetcode
 
-type ListNode struct {
-	Val int
-	Next *ListNode
-}
-
 func AddTwoNumbers(l1, l2 *ListNode) *ListNode {
 	k := &ListNode{}
 	p := k
