@@ -6,6 +6,9 @@ import (
 )
 
 func main() {
-	test := []int{1,8,6,2,5,4,8,3,7}
-	fmt.Println(leetcode.MaxArea(test))
+	// a := &leetcode.ListNode{1,&leetcode.ListNode{2,nil}}
+
+	a := []int{9}
+	b:=leetcode.PlusOne(a)
+	fmt.Println(b)
 }
