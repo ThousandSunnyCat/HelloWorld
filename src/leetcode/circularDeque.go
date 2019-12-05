@@ -3,12 +3,12 @@ package leetcode
 type MyCircularDeque struct {
 	p, q int
 	length int
-    value []interface{}
+	value []interface{}
 }
 
 
 /** Initialize your data structure here. Set the size of the deque to be k. */
-func Constructor(k int) MyCircularDeque {
+func DeqConstructor(k int) MyCircularDeque {
     return MyCircularDeque {
 		p: k,
 		q: 0,
