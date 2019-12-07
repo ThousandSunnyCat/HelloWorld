@@ -58,11 +58,3 @@ func (this *lraStack) top() int {
 func (this *lraStack) isEmpty() bool {
 	return len(this.value) < 1
 }
-
-func max(p, q int) int {
-	if p > q {
-		return p
-	} else {
-		return q
-	}
-}
