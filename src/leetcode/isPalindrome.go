@@ -10,11 +10,11 @@ func IsPalindrome(s string) bool {
 	p, q := 0, len(s)-1
 	for p < q {
 		i, j := s[p], s[q]
-		if isB(i) {
+		if isUpper(i) {
 			if isNum(j) {
 				return false
 			}
-			if isB(j) {
+			if isUpper(j) {
 				if i == j {
 					p++
 					q--
@@ -23,7 +23,7 @@ func IsPalindrome(s string) bool {
 					return false
 				}
 			}
-			if isS(j) {
+			if isLower(j) {
 				if i == j - 32 {
 					p++
 					q--
@@ -35,11 +35,11 @@ func IsPalindrome(s string) bool {
 			q--
 			continue
 		}
-		if isS(i) {
+		if isLower(i) {
 			if isNum(j) {
 				return false
 			}
-			if isS(j) {
+			if isLower(j) {
 				if i == j {
 					p++
 					q--
@@ -48,7 +48,7 @@ func IsPalindrome(s string) bool {
 					return false
 				}
 			}
-			if isB(j) {
+			if isUpper(j) {
 				if i == j + 32 {
 					p++
 					q--
@@ -70,10 +70,10 @@ func IsPalindrome(s string) bool {
 					return false
 				}
 			}
-			if isB(j) {
+			if isUpper(j) {
 				return false
 			}
-			if isS(j) {
+			if isLower(j) {
 				return false
 			}
 			q--
@@ -85,11 +85,11 @@ func IsPalindrome(s string) bool {
 	return true
 }
 
-func isB(k byte) bool {
+func isUpper(k byte) bool {
 	return k > 64 && k < 91
 }
 
-func isS(k byte) bool {
+func isLower(k byte) bool {
 	return k > 96 && k < 123
 }
 
@@ -116,11 +116,11 @@ func IsPalindrome3(s string) bool {
 	p, q := 0, len(s)-1
 	for p < q {
 		var i, j byte
-		if i = t(s[p]); i == 0 {
+		if i = toNewByte(s[p]); i == 0 {
 			p++
 			continue
 		}
-		if j = t(s[q]); j == 0 {
+		if j = toNewByte(s[q]); j == 0 {
 			q--
 			continue
 		}
@@ -136,10 +136,10 @@ func IsPalindrome3(s string) bool {
 	return true
 }
 
-func t(i byte) byte {
-	if isB(i) {
+func toNewByte(i byte) byte {
+	if isUpper(i) {
 		return i - 'A' + 11
-	} else if isS(i) {
+	} else if isLower(i) {
 		return i - 'a' + 11
 	} else if isNum(i) {
 		return i - '0' + 1
